@@ -2,11 +2,11 @@ from Queue import Queue
 
 visited = set()
 queue = Queue()
-entry_point = "f"
+entry_point = "a"
 queue.put(entry_point)
 operations = 0
 
-graph = {"a": ["c"],
+graph = {"a": ["c", "f"],
          "b": ["c", "e"],
          "c": ["a", "b", "d", "e"],
          "d": ["c"],
