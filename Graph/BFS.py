@@ -26,8 +26,6 @@ while not queue.empty():
             if neighbor not in visited:
                 queue.put(neighbor)
     operations += 1  # Count operations
-    # elif "AP" in current_node:
-    # print APs.add(current_node)
 
 print("visited:")
 print(visited)
