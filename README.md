@@ -7,11 +7,13 @@ Continuing with the tradition, this year hacktoberfest is happening from 1st to 
 
 ## Details
 
-By contributing to open source, in terms of 4 pull requests, you get a limited edition hacktoberfest T-shirt and stickers shipped to your address by Digital Ocean all the way from United States.
+By contributing to open source, in terms of 4 pull requests, you get a limited edition hacktoberfest T-shirt and stickers shipped to your address by Digital Ocean.
 
 ## How can I participate?
 
-This repository is for you to practice contributing to open source projects and earn an hacktoberfest T-shirt in the process. Write an implementation of your favorite algorithm in the programming language of your choice and submit a pull request to this repository. If you need any ideas, check out the [issues page](https://github.com/yashjakhotiya/coephacktoberfest/issues)!
+This repository is for you to practice contributing to open source projects and earn a hacktoberfest T-shirt in the process. Write an implementation of your favorite algorithm in the programming language of your choice and submit a pull request to this repository. If you need any ideas, check out the [issues page](https://github.com/yashjakhotiya/coephacktoberfest/issues)!
+
+Issues page is for your reference. You are encouraged to submit implementation of *your* choice of algorithm in any programming language.
 
 Simultaneously, register yourself on the [Hacktoberfest Website](https://hacktoberfest.digitalocean.com/). Click on the 'Start Hacking' button and fill in the required details. When you complete 4 pull requests, get ready for an awesome hacktoberfest T-shirt for you to show-off!
 
@@ -46,6 +48,8 @@ vim/subl/gedit/nano my-awesome-algorithm.c/.cpp/.java/.py
 git add my-awesome-algorithm.c/.cpp/.java/.py
 git commit -m "Add an implementation of my awesome algorithm in Python"
 ```
+Here are some guidelines on how to write a [great commit message](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53).
+
 7. Push your commits
 ```bash
 git push
