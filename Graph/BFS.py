@@ -1,9 +1,4 @@
-import itertools
-import os
-import socket
-import time
 from Queue import Queue
-from time import sleep
 
 visited = set()
 queue = Queue()
