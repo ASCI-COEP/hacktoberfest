@@ -11,7 +11,7 @@ filePath = raw_input("Insert the path of your file to count. Example: /documents
 file = open(path.join(homePath, filePath), "r")
 fileContent = file.read()
 
-class Counter:
+class StringCounter:
     def countLines(self, string):
         result = findall("\n", string)
         print "Lines:", len(result) + 1
@@ -29,11 +29,14 @@ class Counter:
             return elem != ''
         result = filter(filterCondition, split("\n|\s", string))
         print "Words:", len(result)
+    
+    def countAll(self, string):
+        self.countLines(string)
+        self.countWhitespaces(string)
+        self.countCharacters(string)
+        self.countWords(string)
 
-counter = Counter()
-counter.countLines(fileContent)
-counter.countWhitespaces(fileContent)
-counter.countCharacters(fileContent)
-counter.countWords(fileContent)
+counter = StringCounter()
+counter.countAll(fileContent)
 
 file.close()
