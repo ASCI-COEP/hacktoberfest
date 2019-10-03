@@ -4,12 +4,12 @@ This solution relies on the use of Regular Expressions.
 """
 
 import re
-import os
+from os import path
 
-homePath = os.path.expanduser("~") + "/"
-filePath = raw_input("Insert the path of your file to count. Example: /documents/sample.txt\nThis is your current home path below, please start from there:\n> " + homePath)
-file = open(homePath + filePath, "r")
-string = file.read()
+homePath = path.expanduser("~")
+filePath = raw_input("Insert the path of your file to count. Example: /documents/sample.txt\nThis is your current home path below, please start from there:\n> %s/" % homePath)
+file = open(path.join(homePath, filePath), "r")
+fileContent = file.read()
 
 class Counter:
     def countLines(self, string):
@@ -31,9 +31,9 @@ class Counter:
         print "Words:", len(result)
 
 counter = Counter()
-counter.countLines(string)
-counter.countWhitespaces(string)
-counter.countCharacters(string)
-counter.countWords(string)
+counter.countLines(fileContent)
+counter.countWhitespaces(fileContent)
+counter.countCharacters(fileContent)
+counter.countWords(fileContent)
 
 file.close()
