@@ -3,7 +3,7 @@ Counts every Line, Whitespaces, Characters and Words written in a text within a 
 This solution relies on the use of Regular Expressions.
 """
 
-import re
+from re import findall, split
 from os import path
 
 homePath = path.expanduser("~")
@@ -13,21 +13,21 @@ fileContent = file.read()
 
 class Counter:
     def countLines(self, string):
-        result = re.findall("\n", string)
+        result = findall("\n", string)
         print "Lines:", len(result) + 1
     
     def countWhitespaces(self, string):
-        result = re.findall(" ", string)
+        result = findall(" ", string)
         print "Whitespaces:", len(result)
     
     def countCharacters(self, string):
-        result = re.findall("(\S|\N)", string)
+        result = findall("(\S|\N)", string)
         print "Characters:", len(result)
     
     def countWords(self, string):
         def filterCondition(elem):
             return elem != ''
-        result = filter(filterCondition, re.split("\n|\s", string))
+        result = filter(filterCondition, split("\n|\s", string))
         print "Words:", len(result)
 
 counter = Counter()
