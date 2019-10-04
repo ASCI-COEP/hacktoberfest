@@ -1,13 +1,20 @@
 /*
 * C Program to Perform Quick Sort on a set of Entries taken from the user (Recursive Implementation)
 */
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<errno.h>
 void quicksort (int [], int, int);
 int main(){
-	int array[50];
+	int* array = NULL;
 	int size, i;
 	printf("Enter number of elements: \n");
-	scanf("%d", &size); 
+	scanf("%d", &size);
+	array = (int*)malloc(size*sizeof(int));
+	if(array == NULL){
+		perror("Malloc Failed");
+		return errno;
+	}
 	printf("Enter the elements:\n");
 	for (i = 0; i < size; i++){
 		scanf("%d", &array[i]);
@@ -18,6 +25,7 @@ int main(){
 		printf("%d ", array[i]);
 	}
 	printf("\n");
+	free(array);
 	return 0;
 }
 void quicksort(int array[], int low, int high){
