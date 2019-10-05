@@ -4,16 +4,18 @@ using namespace std;
 
 class Queue{
 
-    int first, last, n, cnt;
-    int queue[5];
+    int first, last, n, cnt, limit;
+    int * queue;
 
     public:
-        Queue(){
+        Queue(int size){
             first = last = 0;
+            limit = size;
+            queue = new int[size];
         }
 
         bool fullQueue(){
-            if(((last + 1) % 5) == first){
+            if(((last + 1) % limit) == first){
                 return true;
             }
             return false;
@@ -28,7 +30,7 @@ class Queue{
         void enqueue(int x){
             if(!fullQueue()){
                 queue[last] = x;
-                last = (last + 1) % 5;
+                last = (last + 1) % limit;
             }else{
                 cout << "The queue is full" << endl;
             }
@@ -38,7 +40,7 @@ class Queue{
         int dequeue(){
             if(!emptyQueue()){
                 n = queue[first];
-                first = (first + 1) % 5;
+                first = (first + 1) % limit;
                 return n;
             }
 
@@ -48,14 +50,19 @@ class Queue{
             int aux = first;
             while( !emptyQueue() && aux != last ){
                 cout << queue[aux] << endl;
-                aux = (aux + 1) % 5;
+                aux = (aux + 1) % limit;
             }
 
         }
 };
 
 int main(){
-  //for testing...
+  //creating a queue object...
+  int queue_size = 0;
+  cout << "Please enter the queue size: " << endl;
+  cin >> queue_size;
+  Queue q = Queue(queue_size);
+  /*start coding here...*/
 
   return 0;
 }
