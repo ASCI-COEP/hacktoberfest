@@ -143,5 +143,3 @@ bool checkkBST(Node* root, int minimum, int maximum) {
             return true;
         return false; //Either left or right subtree (or both) is not BST so returning false
 }
-
-
