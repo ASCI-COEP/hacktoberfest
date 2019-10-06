@@ -24,16 +24,16 @@ int main(void)
  
     while(1)
     {
-        printf("Select conversion: \n\n");
+        /*printf("Select conversion: \n\n");
         printf("1. Decimal to binary. \n");
         printf("2. Decimal to octal. \n");
         printf("3. Decimal to hexadecimal. \n");              
         printf("4. Exit. \n");
         
         printf("\nEnter your choice: ");
-        scanf("%d", &choice);
+        scanf("%d", &choice);*/
         
-        switch(choice)
+        /*switch(choice)
         {
             case 1:
                 base = 2;
@@ -50,14 +50,20 @@ int main(void)
             default:
                 printf("Invalid choice.\n\n");
                 continue;
-        }
+        }*/
         
         printf("Enter a number: ");
         scanf("%d", &num);
         
-        printf("Result = ");
-        
-        convert_to_x_base(num, base);
+        printf("Result :\n ");
+        printf("Binary: ");
+        convert_to_x_base(num, 2);
+        printf("\n");
+        printf("Octal: ");
+        convert_to_x_base(num, 8);
+         printf("\n");
+        printf("Hexadecimal: ");
+        convert_to_x_base(num, 16);
                 
         printf("\n\n");
     }        
