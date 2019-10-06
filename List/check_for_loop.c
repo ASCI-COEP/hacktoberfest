@@ -21,7 +21,6 @@ int detectLoop(struct Node* list){
         slow_p = slow_p->next;
         fast_p = fast_p->next->next;
         if (slow_p == fast_p) {
-            printf("Found Loop\n");
             return 1;
         }
     }
@@ -40,7 +39,11 @@ int main(){
     push(&head, 10);
 
     head->next->next->next->next->next->next = head;
-    detectLoop(head);
+    if detectLoop(head){
+        printf("Found Loop\n");
+    } else {
+        printf("No loops\n");
+    }
 
     return 0;
 }
