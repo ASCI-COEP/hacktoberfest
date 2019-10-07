@@ -13,7 +13,7 @@ By contributing to open source, in terms of 4 pull requests, you get a limited e
 
 This repository is for you to practice contributing to open source projects and earn a hacktoberfest T-shirt in the process. Write an implementation of your favorite algorithm in the programming language of your choice and submit a pull request to this repository. If you need any ideas, check out the [issues page](https://github.com/yashjakhotiya/coephacktoberfest/issues)!
 
-Issues page is for your reference. You are encouraged to submit implementation of *your* choice of algorithm in any programming language.
+Issues page is just for your reference. You are encouraged to submit implementation of *your* choice of algorithm in any programming language.
 
 Simultaneously, register yourself on the [Hacktoberfest Website](https://hacktoberfest.digitalocean.com/). Click on the 'Start Hacking' button and fill in the required details. When you complete 4 pull requests, get ready for an awesome hacktoberfest T-shirt for you to show-off!
 
@@ -31,15 +31,15 @@ git init
 ```
 This command initializes your directory for [git version control](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git)
 
-3. Fork this repository by clicking on 'Fork' button
+3. Fork this repository by clicking on the 'Fork' button
 
 4. Clone the forked repository in the directory you just made
 ```bash
-git clone https://github.com/<your-github-username>/coephacktoberfest.git
+git clone https://github.com/<your-github-username>/hacktoberfest.git
 ```
 5. cd into the project repository and adding your implementation of your favorite algorithm in the programming language of your choice.
 ```bash
-cd coephacktoberfest
+cd hacktoberfest
 cd Sorting
 vim/subl/gedit/nano my-awesome-algorithm.c/.cpp/.java/.py
 ```
