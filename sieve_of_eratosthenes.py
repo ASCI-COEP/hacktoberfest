@@ -1,5 +1,6 @@
 
-
+#Time Complexity:o(nlog(log(n)))
+#Space Complexity:o(n)
 def seive(n):
     l=2*[False]+[True]*(n-1)
     for i in range(2,int(n**.5)+1):
@@ -13,9 +14,5 @@ def seive(n):
     return ans
 
 
-
-
-
-
 n=11
-print(*seive(10))
+print(*seive(n))
