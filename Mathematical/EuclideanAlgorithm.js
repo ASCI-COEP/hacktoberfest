@@ -12,22 +12,39 @@ function EuclideanAlgorithmRecursive(a,b){
 
 }
 
-// ax + by = mcd(a,b)
 
-function EuclideanAlgorithmExtendedRecursive(a, b, x, y){
+// Return x,y and mcd(a,b) such that ax + by = mcd(a,b)
+// Return return {  BezoutX: x,  BezoutY: y,  GDC: mcd(a,b) };
+// Precondition: a >= b
 
-    if(a == 0)
+function EuclideanAlgorithmExtendedIterative(a, b)
+{
+    if(b == 0) 
     {
-        x = 0;
-        y = 0;
-        return b;
+        return {  BezoutX: 1,  BezoutY: 0,  GDC: a };
     }
+    
+    let x2 = 1;
+    let x1 = 0;
+    let y2 = 0;
+    let y1 = 1;
 
-    let x_i = 1
-    let y_i = 1 
-    let remainder = b%a;
+    do
+    {
+        
+        let q = Math.floor(a/b);
+        let r = a - q * b;
+        let x = x2 - q * x1;
+        let y = y2 - q * y1;
 
-    let GreatestCommonDivisor = EuclideanAlgorithmExtendedRecursive(remainder, a, x_i, y_i) 
-  
-    return GreatestCommonDivisor;
+        a = b;
+        b = r; 
+        x2 = x1;
+        x1 = x;
+        y2 = y1;
+        y1 = y;
+
+    } while(b > 0)
+
+    return {  BezoutX: x2,  BezoutY: y2,  GDC: a };
 }
