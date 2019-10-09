@@ -48,3 +48,22 @@ function EuclideanAlgorithmExtendedIterative(a, b)
 
     return {  BezoutX: x2,  BezoutY: y2,  GDC: a };
 }
+
+
+// Implement a program that finds out modular multiplicative inverse using Extended Euclidean Algorithm 
+// If want found the inverse of n MOD p
+// Logical Precondition gcd(n,p) == 1
+
+function FindsMultiplicativeInverse (n, p){
+    let gdc = EuclideanAlgorithmExtendedIterative(n, p);
+    if(gdc.GDC == 1)
+    {
+        return gdc.BezoutX;
+    }
+    else
+    {
+        console.log("n and p not coprime");
+    }
+}
+
+
