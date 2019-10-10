@@ -1,7 +1,7 @@
 
 ''''
 Author: Daren Hammer
-Github: Dhammer4
+Github: Dhammer3
 Source: Introduction to Algorithms, Third edition https://github.com/CodeClub-JU/Introduction-to-Algorithms-CLRS/blob/master/Introduction%20to%20Algorithms%20-%203rd%20Edition.pdf
 '''
 import random
