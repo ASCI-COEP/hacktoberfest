@@ -1,7 +1,7 @@
 package hacktoberfest
 
 /**
- * Jump Search implementation in Java
+ * Jump Search implementation in Kotlin
  * Assumes that the array is already sorted
  * Time Complexity - O(sqrt(n))
  */
