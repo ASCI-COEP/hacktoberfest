@@ -2,67 +2,69 @@
 
 using namespace std;
 
-class Queue{
-
-    int first, last, n, cnt, limit;
-    int * queue;
-
-    public:
-        Queue(int size){
-            first = last = 0;
-            limit = size;
-            queue = new int[size];
-        }
-
-        bool fullQueue(){
-            if(((last + 1) % limit) == first){
-                return true;
-            }
-            return false;
-        }
-
-        bool emptyQueue(){
-            if( last == first){
-              return true;
-            }
-            return false;
-        }
-        void enqueue(int x){
-            if(!fullQueue()){
-                queue[last] = x;
-                last = (last + 1) % limit;
-            }else{
-                cout << "The queue is full" << endl;
-            }
-
-        }
-
-        int dequeue(){
-            if(!emptyQueue()){
-                n = queue[first];
-                first = (first + 1) % limit;
-                return n;
-            }
-
-            return 0;
-        }
-        void show(){
-            int aux = first;
-            while( !emptyQueue() && aux != last ){
-                cout << queue[aux] << endl;
-                aux = (aux + 1) % limit;
-            }
-
-        }
+class node{
+public:
+	int data;
+	node* next;
 };
 
-int main(){
-  //creating a queue object...
-  int queue_size = 0;
-  cout << "Please enter the queue size: " << endl;
-  cin >> queue_size;
-  Queue q = Queue(queue_size);
-  /*start coding here...*/
+class Queue{
+private:
+	node *front,*rear;
+public:
+	Queue():front(NULL),rear(NULL){}
+	~Queue(){}
 
-  return 0;
+	void Display();
+	void Enqueue(int x);
+	int Dequeue();
+};
+
+void Queue::Enqueue(int x){
+	node *t=new node;
+	t->data = x;t->next=NULL;
+	if(t==NULL) cout<<"Queue Overflow!!\n";
+	else{
+		if(front==NULL){
+			front=rear=t;
+		}
+		else{
+			rear->next = t;
+			rear = t;
+		}
+	}
+}
+
+int Queue::Dequeue(){
+	int x=-1;
+	if(front==NULL) cout<<" Queue Underflow!!\n";
+	else{
+		node *p=front;
+		x=front->data;
+		front=front->next;
+		delete p;
+	}
+	return x;	
+}
+
+void Queue::Display(){
+	node*p=front;
+	while(p){
+		cout<<p->data<<" ";
+		p=p->next;
+	}
+	cout<<endl;
+}
+
+int main(){
+	Queue Q;
+	Q.Enqueue(2);
+	Q.Enqueue(45);
+	Q.Enqueue(6);
+	Q.Enqueue(1);
+	Q.Enqueue(89);
+
+	Q.Dequeue();
+
+	Q.Display();
 }
