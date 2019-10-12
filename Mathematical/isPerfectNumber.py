@@ -1,7 +1,7 @@
 # Program to find if the number is a Perfect Number or not.
  
 n = int(input("Enter any number: "))
-um = 0
+Sum = 0
 for i in range(1, n):
     if(n % i == 0):
         Sum = Sum + i
