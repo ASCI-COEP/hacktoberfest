@@ -175,6 +175,6 @@ void intersect(list *l1, list *l2){
 			ptr = ptr->next;
 		}
 	}
-	printf("]\n");
+	printf("\n\\ \\\n");
 }
 
