@@ -1,0 +1,83 @@
+#include<iostream.h>
+#include<stdlib.h>
+#include<conio.h>
+
+void main()
+{
+ clrscr();
+ int d,m,y,year,month,day,i,n;
+ cout<<"Enter how many times you want to run this program : ";
+ cin>>n;
+ for(i=1;i<=n;i++)
+ {
+  cout<<"Enter the date as date,month,year:	";
+  cin>>d>>m>>y);
+ if( d>31 || m>12 || (y<1900 || y>=2000) )
+  {
+   cout<<"INVALID INPUT";
+   getch();
+   exit(0);
+  }
+ year = y-1900;
+ year = year/4;
+ year = year+y-1900;
+ switch(m)
+  {
+   case 1:
+   case 10:
+		    month = 1;
+		    break;
+   case 2:
+   case 3:
+   case 11:
+		    month = 4;
+		    break;
+   case 7:
+   case 4:
+		   month = 0;
+		   break;
+   case 5:
+		   month = 2;
+		   break;
+   case 6:
+		   month = 5;
+		   break;
+   case 8:
+		   month = 3;
+		   break;
+   case 9:
+   case 12:
+		   month = 6;
+		   break;
+  }
+ year = year+month;
+ year = year+d;
+ day  = year%7;
+ switch(day)
+  {
+   case 0:
+		   cout<<"Day is SATURDAY";
+		   break;
+   case 1:
+		   cout<<"Day is SUNDAY";
+		   break;
+   case 2:
+		   cout<<"Day is MONDAY";
+		   break;
+   case 3:
+		   cout<<"Day is TUESDAY";
+		   break;
+   case 4:
+		   cout<<"Day is WEDNESDAY";
+		   break;
+   case 5:
+		   cout<<"Day is THURSDAY";
+		   break;
+   case 6:
+		   cout<<"Day is FRIDAY";
+		   break;
+  }
+}
+ getch();
+ 
+}
