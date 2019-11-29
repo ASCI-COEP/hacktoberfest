@@ -118,28 +118,25 @@ struct Node {
 //This was functional problem so the solution is as follows:
 
 bool isBST(Node* root) {
-    return checkkBST(root, INT_MIN, INT_MAX); //chekkBST will return true or false depending on whether the tree is BST or not
+    static node *prev = NULL;  
+      
+    // traverse the tree in inorder fashion  
+    // and keep track of prev node  
+    if (root)  
+    {  
+        if (!isBST(root->left))  
+        return false;  
+  
+        // Allows only distinct valued nodes  
+        if (prev != NULL &&  
+            root->data <= prev->data)  
+        return false;  
+  
+        prev = root;  
+  
+        return isBST(root->right);  
+    }  
+  
+    return true;  
 }
 
-bool checkkBST(Node* root, int minimum, int maximum) {
-        if(!root) //Reached end
-            return true;
-        int tmp = root->data;
-        if(tmp < minimum || tmp > maximum) //If data of the current node is out of range
-            return false;
-        if(!root->right && !root->left) //If current node is leaf node
-            return true;
-        if(!root->right) { //Node has only left subtree
-            if(checkkBST(root->left, minimum, tmp)) //Check for left subtree
-                return true;
-            else return false;
-        }
-        if(!root->left) { //Node has only right subtree
-            if(checkkBST(root->right, tmp, maximum)) //Check for right subtree
-                return true;
-            else return false;
-        }
-        if(checkkBST(root->left, minimum, tmp) && checkkBST(root->right, tmp, maximum)) //Node has both right and left subtree so check for both
-            return true;
-        return false; //Either left or right subtree (or both) is not BST so returning false
-}
