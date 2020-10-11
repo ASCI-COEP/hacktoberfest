@@ -1,8 +1,12 @@
-def isPalindrome(word):
-  for i in range(0, int((len(word)/2))):
-    if(word[i] != word[(len(word)-1)-i]):
-      return False
-  return True
 
-print(isPalindrome("ABBA"))
-print(isPalindrome("Foo"))
+
+def isPalindrome(s):
+	return s == s[::-1]
+
+s = input("Enter word : ")
+ans = isPalindrome(s)
+
+if ans:
+	print("Yes")
+else:
+	print("No")
