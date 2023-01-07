@@ -1,5 +1,9 @@
 # COEP's Hacktoberfest Repository
 
+## Update [2020]
+
+While our initial aim was to give some Git hands-on practice to undergraduate students with Hacktoberfest incentives, we understand their [decision](https://github.com/ASCI-COEP/hacktoberfest/issues/247) to have only organic open source contributions count towards Hacktoberfest's 4 pull requests requirement. **Hence, contributions to this repository won't count starting 2020.** We are keeping this repository alive as a record of participation.
+
 ## Introduction
 
 Hacktoberfest is a month-long celebration to encourage developers to use and contribute to open source projects.
