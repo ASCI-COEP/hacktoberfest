@@ -25,10 +25,10 @@ int main(void)
     while(1)
     {
         /*printf("Select conversion: \n\n");
-        printf("1. Decimal to binary. \n");
-        printf("2. Decimal to octal. \n");
-        printf("3. Decimal to hexadecimal. \n");              
-        printf("4. Exit. \n");
+        printf("1. Decimal to binary! \n");
+        printf("2. Decimal to octal! \n");
+        printf("3. Decimal to hexadecimal! \n");              
+        printf("4. Exit! \n");
         
         printf("\nEnter your choice: ");
         scanf("%d", &choice);*/
